@@ -1,0 +1,65 @@
+{
+	"loading": {
+		"img": [
+			"/assets/img/loading/00.png",
+			"/assets/img/loading/01.png",
+			"/assets/img/loading/02.png"
+		]
+	},
+	"pc": {
+		"tag": [
+			"/assets/tag/pc/app.tag",
+			"/assets/tag/pc/top.tag",
+			"/assets/tag/pc/info.tag",
+			"/assets/tag/pc/join.tag",
+			"/assets/tag/pc/member.tag",
+			"/assets/tag/pc/flyer.tag",
+			"/assets/tag/pc/market.tag",
+			"/assets/tag/pc/links.tag",
+			"/assets/tag/pc/contact.tag"
+		],
+		"img": [
+			"/assets/img/mariko.png"
+		]
+	},
+	"mobile": {
+		"tag": [
+			"/assets/tag/mobile/app.tag"
+		],
+		"img": []
+	},
+	"menu": [
+		{
+			"name": "top",
+			"title": "トップページ"
+		},
+		{
+			"name": "info",
+			"title": "概要"
+		},
+		{
+			"name": "join",
+			"title": "参加申し込み"
+		},
+		{
+			"name": "member",
+			"title": "参加者一覧"
+		},
+		{
+			"name": "flyer",
+			"title": "フライヤー"
+		},
+		{
+			"name": "market",
+			"title": "オンライン販売"
+		},
+		{
+			"name": "links",
+			"title": "リンク集"
+		},
+		{
+			"name": "contact",
+			"title": "連絡先"
+		}
+	]
+}
