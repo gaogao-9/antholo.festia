@@ -1,9 +1,16 @@
 {
 	"loading": {
 		"img": [
-			"/assets/img/loading/00.png",
-			"/assets/img/loading/01.png",
-			"/assets/img/loading/02.png"
+			"/assets/img/loading/rin00.png",
+			"/assets/img/loading/rin01.png",
+			"/assets/img/loading/rin02.png",
+			"/assets/img/loading/slash00.png",
+			"/assets/img/loading/leaf00.png",
+			"/assets/img/loading/leaf01.png",
+			"/assets/img/loading/loading.png"
+		],
+		"css": [
+			"/assets/css/loading.css"
 		]
 	},
 	"pc": {
@@ -19,7 +26,6 @@
 			"/assets/tag/pc/contact.tag"
 		],
 		"img": [
-			"/assets/img/mariko.png"
 		]
 	},
 	"mobile": {

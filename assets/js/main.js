@@ -8,24 +8,32 @@ jQuery(function($){
 	})
 	// 以下loading画像読み込み処理
 	.then(function(loadingResources){
-		var imgs = loadingResources.img;
-		loadBinary(imgs).then(function(imgsBlob){
-			imgsBlob.map(function(blob){
+		var imgs   = loadingResources.img;
+		var styles = loadingResources.css;
+		
+		return $.when(loadBinary(imgs), loadText(styles)).then(function(imgsBlob, styleList){
+			var imgPathList = imgsBlob.map(function(blob){
 				return URL.createObjectURL(blob);
-			}).map(function(url, i){
-				return $(new Image())
-					.attr({
-						src: url,
-						class: ["animation", ("00"+i).slice(-2)].join(" "),
-					})
-					.on("load", function(eve){
-						URL.revokeObjectURL(url);
-					});
-			}).forEach(function(ele){
-				$("#loadingContainer")
-					.find(".imgContainer")
-					.append(ele);
 			});
+			
+			styleList
+				.map(function(style){
+						console.log(style);
+					return style.replace(/\$\[([0-9]+)\]/g, function($0, $1){
+						var img = imgPathList[+$1];
+						console.log($0, $1);
+						return img || $0;
+					});
+				})
+				.forEach(function(style){
+						console.log(style);
+					var ele = $("<style></style>").text(style);
+					$("head")
+						.append(ele);
+				});
+		}).then(function(){
+			// 初期アニメーション開始
+			$("#loadingContainer").addClass("start");
 		});
 	})
 	// 以下メインコンテンツリソース読み込み処理
@@ -33,6 +41,10 @@ jQuery(function($){
 		var contentsResources = (UA.isTablet || UA.isMobile) ? resources.mobile: resources.pc;
 		var tags = contentsResources.tag;
 		var imgs = contentsResources.img;
+		
+		// ローディング1秒待機保証
+		var sleepDfd = new $.Deferred();
+		setTimeout(function(){ sleepDfd.resolve(); }, 1000);
 		
 		// タグの埋め込み
 		tags.map(function(src){
@@ -54,21 +66,41 @@ jQuery(function($){
 			return imgs.reduce(function(obj, path, i){
 				var filename = path.replace(/.*?([^\/]+)\.png$/, "$1");
 				obj[filename] = urls[i];
+				
 				return obj;
 			}, {});
 		});
 		
 		// マウント処理
 		return $.when(imgDfd).then(function(imgs){
-			var mountDfd = new $.Deferred().promise();
+			var mountDfd = new $.Deferred();
 			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, menu: resources.menu });
 			
-			return mountDfd;
+			//$("app").addClass("loaded");
+			return $.when(mountDfd.promise(), sleepDfd.promise());
 		});
 	})
-	// マウント後の後処理
+	// マウント後処理
 	.then(function(){
-		$("#loadingContainer").css("display", "none");
+		$("#loadingContainer").addClass("loaded");
+		
+		// アニメーション1秒待機保証
+		var sleepDfd = new $.Deferred();
+		setTimeout(function(){ sleepDfd.resolve(); }, 1000);
+		
+		return sleepDfd;
+	})
+	.then(function(){
+		$("#loadingContainer, app").addClass("end");
+		
+		// アニメーション1秒待機保証
+		var sleepDfd = new $.Deferred();
+		setTimeout(function(){ sleepDfd.resolve(); }, 1000);
+		
+		return sleepDfd;
+	})
+	.then(function(){
+		//$("#loadingContainer").css("display", "none");
 	});
 	
 	
@@ -92,13 +124,21 @@ jQuery(function($){
 		}
 	}
 	
+	function loadText(pathList){
+		return load(pathList, "text");
+	}
+	
 	function loadBinary(pathList){
-		if(!pathList.length) return $.Deferred().resolve([]);
+		return load(pathList, "binary");
+	}
+	
+	function load(pathList, type){
+		if(!pathList || !pathList.length) return $.Deferred().resolve([]);
 		
 		return $.when.apply($, pathList.map(function(path){
 			return $.get({
 				url: new URL(path, location.origin).href,
-				dataType: "binary",
+				dataType: type,
 			}).then(function(bin){
 				return bin;
 			});

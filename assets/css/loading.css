@@ -1,0 +1,191 @@
+#loadingContainer {
+	width: 100%;
+	height: 100vh;
+	box-sizing: border-box;
+	position: absolute;
+	overflow: hidden;
+}
+
+#loadingContainer .layerContainer {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+
+#loadingContainer .slashLayer {
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	left: 5vw;
+	
+	width: 50vmin;
+	height: 50vmin;
+	max-width:  20vw;
+	max-height: 20vw;
+	
+	opacity: 0;
+	background-image: url($[3]);
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	transform: translateY(-50%) translateX(3%);
+}
+
+#loadingContainer.loaded .slashLayer {
+	opacity: 1;
+	transform: translateY(-50%) translateX(0%);
+	
+	transition-duration: 1s;
+}
+
+#loadingContainer.end .slashLayer {
+	opacity: 0;
+	
+	transition-duration: 0.5s;
+}
+
+#loadingContainer .leafLayer {
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	left: 50%;
+	right: 50%;
+	
+	width: 60vmin;
+	height: 60vmin;
+	max-width:  30vw;
+	max-height: 30vw;
+	
+	opacity: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	transform: translateY(-50%) translateX(-50%);
+}
+
+#loadingContainer .bgLayer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	opacity: 1;
+	background-size: 50vw;
+	background-repeat: no-repeat;
+	background-color: white;
+	
+	transform: rotateZ(0deg);
+}
+
+#loadingContainer .bgLayer.top {
+	bottom: 50%;
+	background-image: url($[6]);
+	background-position: center calc(100% + 5vw);
+	transform-origin: 50% 0%;
+}
+
+#loadingContainer .bgLayer.bottom {
+	top: 50%;
+	background-image: url($[6]);
+	background-position: center -5vw;
+	transform-origin: 50% 100%;
+}
+
+#loadingContainer.loaded .bgLayer {
+	transition-property: transform;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0.23, 1.00, 0, 0.97);
+}
+
+#loadingContainer.loaded .bgLayer.top {
+	transform: rotateX(-10deg);
+}
+
+#loadingContainer.loaded .bgLayer.bottom {
+	transform: rotateX(10deg);
+}
+
+#loadingContainer.end .bgLayer {
+	transition-property: transform;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0.23, 1.00, 0, 0.97);
+}
+
+#loadingContainer.end .bgLayer.top {
+	transform: rotateX(-90deg);
+}
+
+#loadingContainer.end .bgLayer.bottom {
+	transform: rotateX(90deg);
+}
+
+#loadingContainer .leafLayer.left {
+	background-image: url($[4]);
+}
+
+#loadingContainer .leafLayer.right {
+	background-image: url($[5]);
+}
+
+#loadingContainer.loaded .leafLayer {
+	opacity: 1;
+	transition-property: transform;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0.23, 1.00, 0, 0.97);
+}
+
+#loadingContainer.loaded .leafLayer.left {
+	transform: translateY(-40%) translateX(-60%);
+}
+
+#loadingContainer.loaded .leafLayer.right {
+	transform: translateY(-60%) translateX(-40%);
+}
+
+#loadingContainer.end .leafLayer {
+	opacity: 0;
+}
+
+#loadingContainer .rinLayer {
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	left: 70vw;
+	
+	width: 50vmin;
+	height: 50vmin;
+	max-width:  20vw;
+	max-height: 20vw;
+	
+	opacity: 0;
+	background-image: url($[0]);
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	transform: translateY(-80%);
+}
+
+#loadingContainer.start .rinLayer {
+	opacity: 1;
+	transform: translateY(-50%);
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+}
+
+#loadingContainer.loaded .rinLayer {
+	left: 10vw;
+	transform: translateY(-50%);
+	background-image: url($[1]);
+	
+	transition-duration: 0.05s;
+	transition-timing-function: cubic-bezier(0.23, 1.00, 0, 0.97);
+}
+
+#loadingContainer.end .rinLayer {
+	opacity: 0;
+	background-image: url($[2]);
+	
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+}
