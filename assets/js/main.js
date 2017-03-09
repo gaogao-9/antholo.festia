@@ -100,7 +100,7 @@ jQuery(function($){
 		return sleepDfd;
 	})
 	.then(function(){
-		//$("#loadingContainer").css("display", "none");
+		$("#loadingContainer").css("display", "none");
 	});
 	
 	
@@ -137,7 +137,7 @@ jQuery(function($){
 		
 		return $.when.apply($, pathList.map(function(path){
 			return $.get({
-				url: new URL(path, location.origin).href,
+				url: $("<a>", { href: path })[0].href,
 				dataType: type,
 			}).then(function(bin){
 				return bin;
