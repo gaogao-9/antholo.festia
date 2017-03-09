@@ -8,6 +8,8 @@ jQuery(function($){
 	})
 	// 以下loading画像読み込み処理
 	.then(function(loadingResources){
+		if(UA.isTablet || UA.isMobile) return;
+		
 		var imgs   = loadingResources.img;
 		var styles = loadingResources.css;
 		
@@ -32,8 +34,18 @@ jQuery(function($){
 						.append(ele);
 				});
 		}).then(function(){
-			// 初期アニメーション開始
-			$("#loadingContainer").addClass("start");
+			if(!UA.isTablet && !UA.isMobile){
+				// 初期アニメーション開始
+				$("#loadingContainer").addClass("start");
+			}
+			else{
+				// すまぽんの場合はアニメーションなんてなかったのスタイルを
+				$("#loadingContainer")
+					.css("display", "none")
+					.addClass("start")
+					.addClass("loaded")
+					.addClass("end");
+			}
 		});
 	})
 	// 以下メインコンテンツリソース読み込み処理
@@ -82,6 +94,8 @@ jQuery(function($){
 	})
 	// マウント後処理
 	.then(function(){
+		if(UA.isTablet || UA.isMobile) return $.Deferred().reject("Mobile Skipped");
+		
 		$("#loadingContainer").addClass("loaded");
 		
 		// アニメーション1秒待機保証
@@ -101,6 +115,11 @@ jQuery(function($){
 	})
 	.then(function(){
 		$("#loadingContainer").css("display", "none");
+	})
+	.catch(function(err){
+		if(err === "Mobile Skipped") return;
+		
+		throw err;
 	});
 	
 	
