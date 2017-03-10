@@ -38,7 +38,7 @@
 			top: 0;
 			left: 0;
 			right: 0;
-			transform: translateX(-50vw) rotateZ(-45deg) translateX(1.6rem) translateY(7rem);
+			transform: translateX(-50vw) rotateZ(-20deg) translateX(10.5rem) translateY(6rem);
 		}
 		
 		:scope>.title>h1 {
@@ -46,7 +46,7 @@
 			background-color: rgba(0, 105, 255, 0.7);
 			text-align: center;
 			padding: 0.5rem 0;
-			font-size: 1.2rem;
+			font-size: 1.5rem;
 			line-height: 1.3;
 		}
 		
