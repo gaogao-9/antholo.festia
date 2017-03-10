@@ -38,7 +38,7 @@
 			top: 0;
 			left: 0;
 			right: 0;
-			transform: translateX(-50vw) rotateZ(-20deg) translateX(10.5rem) translateY(6rem);
+			transform: translateX(-50vw) rotateZ(-20deg) translateX(9.5rem) translateY(6rem);
 		}
 		
 		:scope>.title>h1 {
