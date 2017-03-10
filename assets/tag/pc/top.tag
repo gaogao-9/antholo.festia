@@ -90,6 +90,7 @@
 			margin: auto 1rem 0;
 			width: calc(1000px - 460px - 2rem);
 			height: 35vh;
+			max-height: 14rem;
 			border: solid 1px rgba(8, 162, 111, 0.87);
 			line-height: 1;
 		}
