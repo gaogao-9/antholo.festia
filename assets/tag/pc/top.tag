@@ -74,6 +74,7 @@
 			width: 460px;
 			height: 100%;
 			max-height: 60vh;
+			border: solid 1px rgba(128, 128, 128, 0.4);
 		}
 		
 		:scope>.menu>div>a {
