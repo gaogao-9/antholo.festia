@@ -1,7 +1,8 @@
 <app>
 	<virtual each="{value,key in opts.menu}">
-		<div data-is="{value.name}"></div>
+		<div data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" id="{value.name}"></div>
 	</virtual>
+	<menu menu="{opts.menu}"></menu>
 	
 	<style>
 	:scope {
@@ -27,6 +28,12 @@
 	</style>
 	<script>
 		var module = this;
+		
+		module.on("before-mount", function(){
+			module.dfdList = opts.menu.map(function(item){
+				return new $.Deferred();
+			});
+		});
 		
 		module.on("mount", function(){
 			console.log("it app");
