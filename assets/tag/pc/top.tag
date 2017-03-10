@@ -30,6 +30,7 @@
 			background-attachment: fixed;
 			background-repeat: no-repeat;
 			background-position: right bottom;
+			line-height: 1;
 		}
 		
 		:scope>.title {
@@ -50,7 +51,11 @@
 		}
 		
 		:scope>.menu {
-			background-color: gray;
+			background-color: #aa7c49;
+		}
+		
+		:scope>.menu>div>a {
+			text-decoration: none;
 		}
 		
 		:scope>.menu>div, :scope>.media {
@@ -67,6 +72,7 @@
 			overflow: scroll;
 			margin: auto 0 0;
 			width: 460px;
+			height: 100%;
 			max-height: 60vh;
 		}
 		
@@ -80,6 +86,7 @@
 		}
 		
 		:scope>.media>.info {
+			box-sizing: border-box;
 			margin: auto 1rem 0;
 			width: calc(1000px - 460px - 2rem);
 			height: 35vh;
@@ -115,7 +122,6 @@
 		var module = this;
 		
 		module.on("mount", function(){
-			console.log(opts);
 			$("head").append('<'+'script async src="//platform.twitter.com/widgets.js" charset="utf-8"><'+'/script>');
 		});
 		
