@@ -24,14 +24,13 @@
 		}
 		:scope > ul > li {
 			overflow: hidden;
-			text-align: right;
 			margin-right: 19px;
 			border: solid 1px rgb(129, 193, 228);
 			border-right: none;
 		}
 		:scope > ul > li > a {
 			display: inline-block;
-			width: 100%;
+			width: calc(100% - 8px);
 			background-color: transparent;
 			transition-property: background-color;
 			transition-duration: 0.3s;
