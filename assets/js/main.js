@@ -1,9 +1,15 @@
 jQuery(function($){
-	var resources;
+	var resources, scrollSettings, endDfd;
 	var UA = createUA();
 	
-	$.getJSON("/assets/json/resources.json").then(function(data){
-		resources = data;
+	$.when(
+		$.getJSON("/assets/json/resources.json"),
+		$.getJSON("/assets/json/scrollSettings.json")
+	).catch(function(obj, message, error){
+		throw error;
+	}).then(function(_resources, _scrollSettings){
+		resources      = _resources[0];
+		scrollSettings = _scrollSettings[0];
 		return resources.loading;
 	})
 	// 以下loading画像読み込み処理
@@ -20,15 +26,12 @@ jQuery(function($){
 			
 			styleList
 				.map(function(style){
-						console.log(style);
 					return style.replace(/\$\[([0-9]+)\]/g, function($0, $1){
 						var img = imgPathList[+$1];
-						console.log($0, $1);
 						return img || $0;
 					});
 				})
 				.forEach(function(style){
-						console.log(style);
 					var ele = $("<style></style>").text(style);
 					$("head")
 						.append(ele);
@@ -54,9 +57,9 @@ jQuery(function($){
 		var tags = contentsResources.tag;
 		var imgs = contentsResources.img;
 		
-		// ローディング1秒待機保証
+		// ローディング0.3秒待機保証
 		var sleepDfd = new $.Deferred();
-		setTimeout(function(){ sleepDfd.resolve(); }, 1000);
+		setTimeout(function(){ sleepDfd.resolve(); }, 500);
 		
 		// タグの埋め込み
 		tags.map(function(src){
@@ -86,7 +89,8 @@ jQuery(function($){
 		// マウント処理
 		return $.when(imgDfd).then(function(imgs){
 			var mountDfd = new $.Deferred();
-			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, menu: resources.menu });
+			endDfd = new $.Deferred();
+			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, endDfd: endDfd, menu: resources.menu, scrollSettings: scrollSettings, });
 			
 			//$("app").addClass("loaded");
 			return $.when(mountDfd.promise(), sleepDfd.promise());
@@ -106,6 +110,7 @@ jQuery(function($){
 	})
 	.then(function(){
 		$("#loadingContainer, app").addClass("end");
+		endDfd.resolve();
 		
 		// アニメーション1秒待機保証
 		var sleepDfd = new $.Deferred();
@@ -118,8 +123,7 @@ jQuery(function($){
 	})
 	.catch(function(err){
 		if(err === "Mobile Skipped") return;
-		
-		throw err;
+		console.error((err && err.stack) || err);
 	});
 	
 	

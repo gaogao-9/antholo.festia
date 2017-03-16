@@ -16,6 +16,7 @@
 	"pc": {
 		"tag": [
 			"/assets/tag/pc/app.tag",
+			"/assets/tag/pc/side-menu.tag",
 			"/assets/tag/pc/top.tag",
 			"/assets/tag/pc/info.tag",
 			"/assets/tag/pc/join.tag",
@@ -26,7 +27,16 @@
 			"/assets/tag/pc/contact.tag"
 		],
 		"img": [
-			"/assets/img/topbg.png"
+			"/assets/img/top_bg.png",
+			"/assets/img/menu/menu_top.png",
+			"/assets/img/menu/menu_info.png",
+			"/assets/img/menu/menu_join.png",
+			"/assets/img/menu/menu_member.png",
+			"/assets/img/menu/menu_flyer.png",
+			"/assets/img/menu/menu_market.png",
+			"/assets/img/menu/menu_links.png",
+			"/assets/img/menu/menu_contact.png",
+			"/assets/img/menu/menu_grid.png"
 		]
 	},
 	"mobile": {

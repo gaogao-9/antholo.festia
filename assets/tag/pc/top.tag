@@ -1,4 +1,4 @@
-<top style="background-image:url({this.opts.imgs.topbg});">
+<top style="background-image:url({this.opts.imgs.top_bg});">
 	<div class="title">
 		<h1><span>政剣マニフェスティア</span><br><span>オールキャラアンソロジー</span></h1>
 	</div>
@@ -122,9 +122,14 @@
 	
 	<script>
 		var module = this;
+		var scrollMediator = opts.scrollMediator;
 		
 		module.on("mount", function(){
 			$("head").append('<'+'script async src="//platform.twitter.com/widgets.js" charset="utf-8"><'+'/script>');
+		});
+		
+		module.on("mount", function(){
+			opts.dfd.resolve("top");
 		});
 		
 	</script>
