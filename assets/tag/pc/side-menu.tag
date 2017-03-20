@@ -31,7 +31,7 @@
 		:scope > ul > li > a {
 			display: inline-block;
 			width: calc(100% - 8px);
-			background-color: transparent;
+			background-color: white;
 			transition-property: background-color;
 			transition-duration: 0.3s;
 			transition-timing-function: ease;
