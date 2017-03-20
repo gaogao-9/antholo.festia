@@ -70,7 +70,7 @@
 		
 		:scope>.media>.twitter {
 			overflow: scroll;
-			margin: auto 0 0;
+			margin: auto 0 0 1rem;
 			width: 460px;
 			height: 100%;
 			max-height: 60vh;
