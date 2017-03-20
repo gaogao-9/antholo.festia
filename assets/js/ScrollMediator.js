@@ -13,6 +13,8 @@ var ScrollMediator = (function(){
 		this.events  = {};
 		this.currentScrollTop = -1;
 		this.currentHeight    = -1;
+		this.oldScrollTop     = -1;
+		this.scrollTimerId    = null;
 	};
 	
 	ScrollMediator.prototype.on = function on(name, callback){
@@ -41,7 +43,6 @@ var ScrollMediator = (function(){
 		this.trigger("position-change", eve);
 		
 		var currentIndex = updateEnterState.call(this);
-		//console.log(this.eleList.map((x)=> x.isEnter), this.eleList.map((x)=> x.isLeave));
 	};
 	
 	ScrollMediator.prototype.updateSize = function updatePosition(height){
@@ -71,9 +72,20 @@ var ScrollMediator = (function(){
 			}, item);
 		});
 		
+		// scrollイベントは変化が激しい時に間引く
 		$win.on("scroll", function(eve){
-			_this.updatePosition($win.scrollTop());
+			var scrollTop = $win.scrollTop();
+			if(Math.abs(_this.oldScrollTop - scrollTop) > 10){
+				if(_this.scrollTimerId) return;
+				
+				_this.scrollTimerId = setTimeout(onScrollTimer.bind(_this, $win), 100);
+			}
+			else{
+				_this.updatePosition(scrollTop);
+			}
+			_this.oldScrollTop = scrollTop;
 		});
+		
 		$win.on("resize", function(eve){
 			_this.updateSize($win.innerHeight());
 		});
@@ -131,6 +143,11 @@ var ScrollMediator = (function(){
 		return i;
 	}
 	
+	function onScrollTimer($win){
+		this.oldScrollTop  = $win.scrollTop();
+		this.scrollTimerId = null;
+		this.updatePosition(this.oldScrollTop);
+	}
 	return ScrollMediator;
 })();
 
