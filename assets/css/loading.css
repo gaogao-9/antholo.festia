@@ -17,7 +17,7 @@
 	position: absolute;
 	top: 50%;
 	bottom: 50%;
-	left: 5vw;
+	left: 0;
 	
 	width: 50vmin;
 	height: 50vmin;
@@ -30,6 +30,7 @@
 	background-repeat: no-repeat;
 	
 	transform: translateY(-50%) translateX(3%);
+	transition-property: transform, opacity;
 }
 
 #loadingContainer.loaded .slashLayer {
@@ -52,10 +53,10 @@
 	left: 50%;
 	right: 50%;
 	
-	width: 60vmin;
-	height: 60vmin;
-	max-width:  30vw;
-	max-height: 30vw;
+	width: 50vmin;
+	height: 50vmin;
+	max-width:  20vw;
+	max-height: 20vw;
 	
 	opacity: 0;
 	background-size: cover;
@@ -152,32 +153,32 @@
 	position: absolute;
 	top: 50%;
 	bottom: 50%;
-	left: 70vw;
+	left: 80vw;
 	
 	width: 50vmin;
 	height: 50vmin;
-	max-width:  20vw;
-	max-height: 20vw;
+	max-width:  40vw;
+	max-height: 40vw;
 	
 	opacity: 0;
 	background-image: url($[0]);
 	background-size: cover;
 	background-repeat: no-repeat;
 	
-	transform: translateY(-80%);
+	transform: translateY(-80%) translateX(-50%);
 	transition-property: transform, opacity;
 }
 
 #loadingContainer.start .rinLayer {
 	opacity: 1;
-	transform: translateY(-50%);
-	transition-duration: 0.5s;
+	transform: translateY(-50%) translateX(-50%);
+	transition-duration: 0.3s;
 	transition-timing-function: ease;
 }
 
 #loadingContainer.loaded .rinLayer {
-	left: 10vw;
-	transform: translateY(-50%);
+	left: 20vw;
+	transform: translateY(-50%) translateX(-50%);
 	background-image: url($[1]);
 	
 	transition-duration: 0.05s;
@@ -185,6 +186,7 @@
 }
 
 #loadingContainer.end .rinLayer {
+	left: 24vw;
 	opacity: 0;
 	background-image: url($[2]);
 	

@@ -104,7 +104,7 @@ jQuery(function($){
 		
 		// アニメーション1秒待機保証
 		var sleepDfd = new $.Deferred();
-		setTimeout(function(){ sleepDfd.resolve(); }, 1000);
+		setTimeout(function(){ sleepDfd.resolve(); }, 600);
 		
 		return sleepDfd;
 	})
