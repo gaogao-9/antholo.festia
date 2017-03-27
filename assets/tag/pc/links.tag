@@ -1,5 +1,7 @@
 <links>
-	<p>links!</p>
+	<div id="{opts.appId}">
+		<p>links!</p>
+	</div>
 	
 	<style>
 		:scoped {

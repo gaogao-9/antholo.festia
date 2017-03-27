@@ -1,6 +1,7 @@
 <contact>
-	<p>contact!</p>
-	
+	<div id="{opts.appId}">
+		<p>contact!</p>
+	</div>
 	<style>
 		:scoped {
 			

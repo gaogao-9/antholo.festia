@@ -5,7 +5,7 @@
 	</virtual>
 	<div class="container {visible: this.visible}">
 		<div class="contents">
-			<div each="{value,key in opts.menu.slice(1)}" data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" dfd="{parent.dfdList[key+1]}" scroll-mediator="{parent.scrollMediator}" id="{value.name}"></div>
+			<div each="{value,key in opts.menu.slice(1)}" data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" dfd="{parent.dfdList[key+1]}" scroll-mediator="{parent.scrollMediator}" app-id="{value.name}"></div>
 		</div><!--
 		--><side-menu menu="{opts.menu}" imgs="{opts.imgs}" scroll-mediator="{this.scrollMediator}"></side-menu>
 	</div>
@@ -43,6 +43,9 @@
 	:scope > div.container > div.contents {
 		width: 750px;
 	}
+	:scope > div.container > div.contents>div {
+		padding-top: 0.3rem;
+	}
 	:scope > div.container > side-menu {
 		position: -webkit-sticky;
 		position: sticky;
@@ -59,16 +62,21 @@
 			}).length;
 			
 			if(hasHash){
-				$("html,body").animate({scrollTop:$(location.hash).offset().top});
+				scroll($(location.hash));
 			}
 			
 			$(document).on("click", "a", function(eve){
 				if(!eve.currentTarget.hash) return;
 				if(eve.currentTarget.host !== location.host) return;
 				
-				$("html,body").animate({scrollTop:$(eve.currentTarget.hash).offset().top});
+				scroll($(eve.currentTarget.hash));
 			});
-		;
+			
+			function scroll(ele){
+				$("html,body").animate({
+					scrollTop: ele.offset().top,
+				}, 500, "easeOutExpo");
+			}
 		});
 		
 		module.on("before-mount", function(){

@@ -1,5 +1,7 @@
 <info>
-	<p>info!</p>
+	<div id="{opts.appId}">
+		<h1>概要</h1>
+	</div>
 	
 	<style>
 		:scoped {

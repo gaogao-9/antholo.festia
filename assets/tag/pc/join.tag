@@ -1,5 +1,7 @@
 <join>
-	<p>join!</p>
+	<div id="{opts.appId}">
+		<p>join!</p>
+	</div>
 	
 	<style>
 		:scoped {

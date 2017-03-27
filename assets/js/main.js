@@ -92,7 +92,6 @@ jQuery(function($){
 			endDfd = new $.Deferred();
 			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, endDfd: endDfd, menu: resources.menu, scrollSettings: scrollSettings, });
 			
-			//$("app").addClass("loaded");
 			return $.when(mountDfd.promise(), sleepDfd.promise());
 		});
 	})
@@ -100,9 +99,9 @@ jQuery(function($){
 	.then(function(){
 		if(UA.isTablet || UA.isMobile) return $.Deferred().reject("Mobile Skipped");
 		
-		$("#loadingContainer").addClass("loaded");
+		$("#loadingContainer, app").addClass("loaded");
 		
-		// アニメーション1秒待機保証
+		// アニメーション0.6秒待機保証
 		var sleepDfd = new $.Deferred();
 		setTimeout(function(){ sleepDfd.resolve(); }, 600);
 		

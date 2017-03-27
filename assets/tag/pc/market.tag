@@ -1,5 +1,7 @@
 <market>
-	<p>market!</p>
+	<div id="{opts.appId}">
+		<p>market!</p>
+	</div>
 	
 	<style>
 		:scoped {

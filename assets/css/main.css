@@ -6,8 +6,12 @@
 	font-family:"MyYuGothicM";font-weight:bold;src:local("YuGothic-Bold"),local("Yu Gothic");
 }
 
+:root {
+	font-size: 16px;
+	line-height: 1;
+}
+
 html {
 	font-family: -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",MyYuGothicM,Meiryo,sans-serif;
 	height: 100%;
-	line-height: 1;
 }
