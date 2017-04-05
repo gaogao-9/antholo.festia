@@ -14,10 +14,11 @@
 			transform: translateY(0%);
 		}
 		:scope > ul{
-			margin-left: 30px;
+			margin: 0 10px 0 30px;
 			border: solid 1px rgb(129, 193, 228);
 			border-top: none;
 			box-shadow: rgb(175, 197, 196) 10px 10px 5px -5px;
+			background-color: #ffffff;
 			background-size: 30px;
 			background-repeat: repeat-y;
 			background-position: right bottom;

@@ -18,6 +18,7 @@
 		overflow-wrap:break-word;
 		width: 100%;
 		height: 100vh;
+		background-color: #fffce8;
 	}
 	:scope.end {
 		overflow: visible;
@@ -29,8 +30,7 @@
 		min-width: 1000px;
 	}
 	:scope > div.container {
-		margin: 0 auto;
-		width: 1000px;
+		min-width: 1000px;
 		overflow: hidden;
 	}
 	:scope > div.container.visible {
@@ -41,10 +41,11 @@
 		vertical-align: top;
 	}
 	:scope > div.container > div.contents {
-		width: 750px;
+		width: calc(50% + 250px);
+		min-width: 750px;
 	}
-	:scope > div.container > div.contents>div {
-		padding-top: 0.3rem;
+	:scope > div.container > div.contents>div img {
+		max-width: 100%;
 	}
 	:scope > div.container > side-menu {
 		position: -webkit-sticky;

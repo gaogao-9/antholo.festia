@@ -25,10 +25,11 @@
 	max-height: 20vw;
 	
 	opacity: 0;
-	background-image: url($[3]);
+	background-image: url($[slash]);
 	background-size: cover;
 	background-repeat: no-repeat;
 	
+	will-change: transform, opacity;
 	transform: translateY(-50%) translateX(3%);
 	transition-property: transform, opacity;
 }
@@ -82,19 +83,20 @@
 
 #loadingContainer .bgLayer.top {
 	bottom: 50%;
-	background-image: url($[6]);
+	background-image: url($[loading]);
 	background-position: center calc(100% + 5vw);
 	transform-origin: 50% 0%;
 }
 
 #loadingContainer .bgLayer.bottom {
 	top: 50%;
-	background-image: url($[6]);
+	background-image: url($[loading]);
 	background-position: center -5vw;
 	transform-origin: 50% 100%;
 }
 
 #loadingContainer.loaded .bgLayer {
+	will-change: transform;
 	transition-property: transform;
 	transition-duration: 1s;
 	transition-timing-function: cubic-bezier(0.23, 1.00, 0, 0.97);
@@ -123,15 +125,16 @@
 }
 
 #loadingContainer .leafLayer.left {
-	background-image: url($[4]);
+	background-image: url($[leaf00]);
 }
 
 #loadingContainer .leafLayer.right {
-	background-image: url($[5]);
+	background-image: url($[leaf01]);
 }
 
 #loadingContainer.loaded .leafLayer {
 	opacity: 1;
+	will-change: transform;
 	transition-property: transform;
 	transition-duration: 1s;
 	transition-timing-function: cubic-bezier(0.23, 1.00, 0, 0.97);
@@ -161,10 +164,12 @@
 	max-height: 40vw;
 	
 	opacity: 0;
-	background-image: url($[0]);
+	background-image: url($[rin]);
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: left top;
 	
+	will-change: transform, opacity, background-position;
 	transform: translateY(-80%) translateX(-50%);
 	transition-property: transform, opacity;
 }
@@ -179,7 +184,7 @@
 #loadingContainer.loaded .rinLayer {
 	left: 20vw;
 	transform: translateY(-50%) translateX(-50%);
-	background-image: url($[1]);
+	background-position: center top;
 	
 	transition-duration: 0.05s;
 	transition-timing-function: cubic-bezier(0.23, 1.00, 0, 0.97);
@@ -188,7 +193,7 @@
 #loadingContainer.end .rinLayer {
 	left: 24vw;
 	opacity: 0;
-	background-image: url($[2]);
+	background-position: right top;
 	
 	transition-duration: 0.5s;
 	transition-timing-function: cubic-bezier(0, 0.3, 1,-0.34);

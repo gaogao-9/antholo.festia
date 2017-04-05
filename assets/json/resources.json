@@ -1,10 +1,8 @@
 {
 	"loading": {
 		"img": [
-			"/assets/img/loading/rin00.png",
-			"/assets/img/loading/rin01.png",
-			"/assets/img/loading/rin02.png",
-			"/assets/img/loading/slash00.png",
+			"/assets/img/loading/rin.png",
+			"/assets/img/loading/slash.png",
 			"/assets/img/loading/leaf00.png",
 			"/assets/img/loading/leaf01.png",
 			"/assets/img/loading/loading.png"
@@ -27,7 +25,9 @@
 			"/assets/tag/pc/contact.tag"
 		],
 		"img": [
-			"/assets/img/top_bg.png",
+			"/assets/img/bg/bg_top.png",
+			"/assets/img/bg/bg_flower.png",
+			"/assets/img/bg/bg_circle.png",
 			"/assets/img/menu/menu_top.png",
 			"/assets/img/menu/menu_info.png",
 			"/assets/img/menu/menu_join.png",
@@ -36,14 +36,34 @@
 			"/assets/img/menu/menu_market.png",
 			"/assets/img/menu/menu_links.png",
 			"/assets/img/menu/menu_contact.png",
-			"/assets/img/menu/menu_grid.png"
+			"/assets/img/menu/menu_grid.png",
+			"/assets/img/chara/chara_isyu.png",
+			"/assets/img/chara/chara_maron.png",
+			"/assets/img/title/title_oubo.png",
+			"/assets/img/title/title_sankayotei.png",
+			"/assets/img/subhead/subhead00_aqua.png",
+			"/assets/img/subhead/subhead00_blue.png",
+			"/assets/img/subhead/subhead00_green.png",
+			"/assets/img/subhead/subhead00_pink.png",
+			"/assets/img/subhead/subhead00_purple.png",
+			"/assets/img/subhead/subhead00_red.png",
+			"/assets/img/subhead/subhead01_aqua.png",
+			"/assets/img/subhead/subhead01_blue.png",
+			"/assets/img/subhead/subhead01_green.png",
+			"/assets/img/subhead/subhead01_pink.png",
+			"/assets/img/subhead/subhead01_purple.png",
+			"/assets/img/subhead/subhead01_red.png"
+		],
+		"style": [
+			"https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css"
 		]
 	},
 	"mobile": {
 		"tag": [
 			"/assets/tag/mobile/app.tag"
 		],
-		"img": []
+		"img": [],
+		"style": []
 	},
 	"menu": [
 		{

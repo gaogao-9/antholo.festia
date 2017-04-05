@@ -29,7 +29,6 @@ var ScrollMediator = (function(){
 	};
 	
 	ScrollMediator.prototype.trigger = function trigger(name){
-		this.events[name] = this.events[name];
 		if(!this.events[name]) return;
 		
 		this.events[name].fire.apply(this, Array.prototype.slice.call(arguments, 1));
@@ -75,7 +74,7 @@ var ScrollMediator = (function(){
 		// scrollイベントは変化が激しい時に間引く
 		$win.on("scroll", function(eve){
 			var scrollTop = $win.scrollTop();
-			if(Math.abs(_this.oldScrollTop - scrollTop) > 10){
+			if(Math.abs(_this.oldScrollTop - scrollTop) > 30){ // 移動量間引きいらねーわこれｗ
 				if(_this.scrollTimerId) return;
 				
 				_this.scrollTimerId = setTimeout(onScrollTimer.bind(_this, $win), 100);

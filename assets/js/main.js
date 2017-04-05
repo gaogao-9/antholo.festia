@@ -20,14 +20,18 @@ jQuery(function($){
 		var styles = loadingResources.css;
 		
 		return $.when(loadBinary(imgs), loadText(styles)).then(function(imgsBlob, styleList){
-			var imgPathList = imgsBlob.map(function(blob){
-				return URL.createObjectURL(blob);
-			});
+			var imgPathList = imgs
+				.reduce(function(obj, path, i){
+					var filename = path.replace(/.*?([^\/]+)\.png$/, "$1");
+					obj[filename] = URL.createObjectURL(imgsBlob[i]);
+					
+					return obj;
+				}, {});
 			
 			styleList
 				.map(function(style){
-					return style.replace(/\$\[([0-9]+)\]/g, function($0, $1){
-						var img = imgPathList[+$1];
+					return style.replace(/\$\[([^\]]+)\]/ig, function($0, $1){
+						var img = imgPathList[$1];
 						return img || $0;
 					});
 				})
@@ -43,19 +47,16 @@ jQuery(function($){
 			}
 			else{
 				// すまぽんの場合はアニメーションなんてなかったのスタイルを
-				$("#loadingContainer")
-					.css("display", "none")
-					.addClass("start")
-					.addClass("loaded")
-					.addClass("end");
+				$("#loadingContainer").remove();
 			}
 		});
 	})
 	// 以下メインコンテンツリソース読み込み処理
 	.then(function(){
 		var contentsResources = (UA.isTablet || UA.isMobile) ? resources.mobile: resources.pc;
-		var tags = contentsResources.tag;
-		var imgs = contentsResources.img;
+		var tags   = contentsResources.tag;
+		var imgs   = contentsResources.img;
+		var styles = contentsResources.style;
 		
 		// ローディング0.3秒待機保証
 		var sleepDfd = new $.Deferred();
@@ -84,6 +85,11 @@ jQuery(function($){
 				
 				return obj;
 			}, {});
+		});
+		
+		// スタイルの埋め込み
+		styles.forEach(function(style){
+			$("head").append('<link href="' + style + '" rel="stylesheet">');
 		});
 		
 		// マウント処理
@@ -118,7 +124,7 @@ jQuery(function($){
 		return sleepDfd;
 	})
 	.then(function(){
-		$("#loadingContainer").css("display", "none");
+		$("#loadingContainer").remove();
 	})
 	.catch(function(err){
 		if(err === "Mobile Skipped") return;
