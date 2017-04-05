@@ -34,6 +34,9 @@
 			font-size: 1.7rem;
 			background-size: cover;
 			background-attachment: fixed;
+			transition-property: background-position-y;
+			transition-duration: 0.4s;
+			transition-timing-function: ease;
 		}
 		
 		:scope>div>div>* {
@@ -97,8 +100,8 @@
 		var module = this;
 		var scrollMediator = opts.scrollMediator;
 		
-		module.on("mount", function(){
-			console.log("it join");
+		module.on("before-mount", function(){
+			module.flowerBgPos = 20;
 		});
 		
 		scrollMediator.on("join-visible", function(eve){

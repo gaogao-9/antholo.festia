@@ -13,7 +13,6 @@ var ScrollMediator = (function(){
 		this.events  = {};
 		this.currentScrollTop = -1;
 		this.currentHeight    = -1;
-		this.oldScrollTop     = -1;
 		this.scrollTimerId    = null;
 	};
 	
@@ -71,23 +70,27 @@ var ScrollMediator = (function(){
 			}, item);
 		});
 		
-		// scrollイベントは変化が激しい時に間引く
-		$win.on("scroll", function(eve){
-			var scrollTop = $win.scrollTop();
-			if(Math.abs(_this.oldScrollTop - scrollTop) > 30){ // 移動量間引きいらねーわこれｗ
-				if(_this.scrollTimerId) return;
-				
-				_this.scrollTimerId = setTimeout(onScrollTimer.bind(_this, $win), 100);
-			}
-			else{
-				_this.updatePosition(scrollTop);
-			}
-			_this.oldScrollTop = scrollTop;
-		});
+		var supportPassive = false;
+		document
+			.createElement("div")
+			.addEventListener("test", function(){}, {
+				get passive() {
+					supportPassive = true;
+					return false;
+				}
+			});
 		
-		$win.on("resize", function(eve){
+		// scrollイベントは間引く
+		$win[0].addEventListener("scroll", function(eve){
+			var scrollTop = $win.scrollTop();
+			if(_this.scrollTimerId) return;
+			
+			_this.scrollTimerId = setTimeout(onScrollTimer.bind(_this, $win), 200);
+		}, supportPassive ? { passive: true } : false);
+		console.log(supportPassive);
+		$win[0].addEventListener("resize", function(eve){
 			_this.updateSize($win.innerHeight());
-		});
+		}, supportPassive ? { passive: true } : false);
 		
 		this.currentScrollTop = $win.scrollTop();
 		this.updateSize($win.innerHeight());
@@ -143,9 +146,8 @@ var ScrollMediator = (function(){
 	}
 	
 	function onScrollTimer($win){
-		this.oldScrollTop  = $win.scrollTop();
 		this.scrollTimerId = null;
-		this.updatePosition(this.oldScrollTop);
+		this.updatePosition($win.scrollTop());
 	}
 	return ScrollMediator;
 })();
