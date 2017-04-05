@@ -28,8 +28,8 @@
 	<style>
 		:scope {
 			width: 750px;
-			padding-left: calc(50vw - 507.5px);
-			padding-right: calc(50vw - 257.5px);
+			padding-left: calc(50vw - 507px);
+			padding-right: calc(50vw - 265px);
 			font-family: "Rounded Mplus 1c";
 			font-size: 1.7rem;
 			background-size: cover;
