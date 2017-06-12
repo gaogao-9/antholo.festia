@@ -8,7 +8,7 @@
 		</div>
 		<div class="data">
 			<table>
-				<tr><td class="right colorize">タイトル：</td><td class="colorize">未定 （ここは決定次第差し替えたい）</td></tr>
+				<tr><td class="right colorize">タイトル：</td><td class="colorize">未定</td></tr>
 				<tr><td class="right colorize">対象：</td><td class="colorize">全年齢向け</td></tr>
 				<tr><td class="right colorize">発行日：</td><td class="colorize">2017年12月 コミックマーケット93 政マニ配置該当日</td></tr>
 				<tr><td class="right colorize">印刷形式：</td><td class="colorize">A5サイズ／本文モノクロ／オフセット</td></tr>
@@ -21,6 +21,7 @@
 				<li class="colorize">【主催】</li>
 				<li class="colorize">伊丹（twitter ID: <a href="https://twitter.com/sanetaso" target="_blank">@sanetaso</a>）</li>
 				<li class="colorize">のんアフ（twitter ID: <a href="https://twitter.com/non_affleck" target="_blank">@non_affleck</a>）</li>
+				<li class="colorize">がお（twitter ID: <a href="https://twitter.com/gaogao_9" target="_blank">@gaogao_9</a>）</li>
 			</ul>
 		</div>
 		<div class="notification center colorize">

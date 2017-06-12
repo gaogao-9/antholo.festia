@@ -1,13 +1,4 @@
 var ScrollMediator = (function(){
-	var domDfd = (function(){
-		var dfd = new jQuery.Deferred();
-		jQuery(function($){
-			dfd.resolve();
-		});
-		
-		return dfd.promise();
-	})();
-	
 	function ScrollMediator(){
 		this.eleList = [];
 		this.events  = {};
