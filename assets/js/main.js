@@ -80,7 +80,7 @@ jQuery(function($){
 			});
 			
 			return imgs.reduce(function(obj, path, i){
-				var filename = path.replace(/.*?([^\/]+)\.png$/, "$1");
+				var filename = path.replace(/.*?([^\/]+)\/([^\/]+)\.png$/, "$1_$2");
 				obj[filename] = urls[i];
 				
 				return obj;
@@ -91,6 +91,15 @@ jQuery(function($){
 		styles.forEach(function(style){
 			$("head").append('<link href="' + style + '" rel="stylesheet">');
 		});
+		
+		// スクロールバー幅の取得
+		var scrollBarWidth = function(){
+			var $iframe = document.createElement("iframe");
+			
+			console.log($iframe.contentWindow);
+			
+			//return parseInt(window.getComputedStyle(tester, null).getPropertyValue('width'));
+		}();
 		
 		// マウント処理
 		return $.when(imgDfd).then(function(imgs){

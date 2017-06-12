@@ -27,11 +27,6 @@
 	
 	<style>
 		:scope {
-			width: 750px;
-			padding-left: calc(50vw - 507px);
-			padding-right: calc(50vw - 265px);
-			font-family: "Rounded Mplus 1c";
-			font-size: 1.7rem;
 			background-size: cover;
 			background-attachment: fixed;
 			transition-property: background-position-y;
@@ -44,9 +39,7 @@
 		}
 		
 		:scope>div>div>img.title {
-			width: 300px;
 			margin-top: 15px;
-			z-index: 100;
 		}
 		
 		:scope>div>div>img.title.left {

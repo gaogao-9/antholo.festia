@@ -2,7 +2,7 @@
 	{
 		"name": "top",
 		"top": 0,
-		"bottom": 0
+		"bottom": -10
 	},
 	{
 		"name": "info",

@@ -44,8 +44,21 @@
 		width: calc(50% + 250px);
 		min-width: 750px;
 	}
-	:scope > div.container > div.contents>div img {
+	:scope > div.container > div.contents > div {
+		width: 750px;
+		padding: 0 calc(50vw - 265px) 0 calc(50vw - 507px);
+		font-family: "Rounded Mplus 1c";
+		font-size: 1.7rem;
+	}
+	:scope > div.container > div.contents > div > div:first-child {
+		padding-top: 10px;
+	}
+	:scope > div.container > div.contents > div img {
 		max-width: 100%;
+	}
+	:scope > div.container > div.contents > div img.title {
+		width: 300px;
+		z-index: 100;
 	}
 	:scope > div.container > side-menu {
 		position: -webkit-sticky;
@@ -86,18 +99,15 @@
 			module.scrollMediator.on("top-visible-change", function(eve){
 				module.update({visible: eve.isLeave});
 			});
-			
 		});
 		
 		module.on("before-mount", function(){
 			module.dfdList = opts.menu.map(function(item){
 				return new $.Deferred();
 			});
-			console.log(module.dfdList);
 		});
 		
 		module.on("mount", function(){
-			console.log("it app");
 			$.when.apply($, module.dfdList).then(function(){
 				var arg = opts.scrollSettings.map(function(obj){
 					return $.extend(obj, {

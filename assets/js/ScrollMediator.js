@@ -82,12 +82,11 @@ var ScrollMediator = (function(){
 		
 		// scrollイベントは間引く
 		$win[0].addEventListener("scroll", function(eve){
-			var scrollTop = $win.scrollTop();
 			if(_this.scrollTimerId) return;
 			
-			_this.scrollTimerId = setTimeout(onScrollTimer.bind(_this, $win), 200);
+			_this.scrollTimerId = setTimeout(onScrollTimer.bind(_this, $win), 100);
 		}, supportPassive ? { passive: true } : false);
-		console.log(supportPassive);
+		
 		$win[0].addEventListener("resize", function(eve){
 			_this.updateSize($win.innerHeight());
 		}, supportPassive ? { passive: true } : false);
@@ -119,14 +118,14 @@ var ScrollMediator = (function(){
 			item.offset = item.ele.offset().top;
 			visibleChanged = false;
 			
-			if((this.currentScrollTop+this.currentHeight > item.offset) ^ item.isEnter){
+			if((this.currentScrollTop+this.currentHeight + item.top > item.offset) ^ item.isEnter){
 				item.isEnter = !item.isEnter;
 				if(item.isEnter){
 					eve = $.extend(createEvent.call(this), item);
 					this.trigger(item.name+"-enter", eve);
 				}
 			}
-			if((this.currentScrollTop >= item.enterOffset) ^ item.isLeave){
+			if((this.currentScrollTop - item.bottom >= item.enterOffset) ^ item.isLeave){
 				item.isLeave = !item.isLeave;
 				
 				if(item.isLeave){
