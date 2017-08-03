@@ -46,6 +46,11 @@
 			"/assets/img/title/site.png",
 			"/assets/img/title/oubo.png",
 			"/assets/img/title/sankayotei.png",
+			"/assets/img/title/member.png",
+			"/assets/img/title/flyer.png",
+			"/assets/img/title/market.png",
+			"/assets/img/title/links.png",
+			"/assets/img/title/contact.png",
 			"/assets/img/subhead00/aqua.png",
 			"/assets/img/subhead00/blue.png",
 			"/assets/img/subhead00/green.png",
@@ -57,7 +62,8 @@
 			"/assets/img/subhead01/green.png",
 			"/assets/img/subhead01/pink.png",
 			"/assets/img/subhead01/purple.png",
-			"/assets/img/subhead01/red.png"
+			"/assets/img/subhead01/red.png",
+			"/assets/img/res/flyer.png"
 		],
 		"style": [
 			"https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css"

@@ -5,7 +5,7 @@
 	</virtual>
 	<div class="container {visible: this.visible}">
 		<div class="contents">
-			<div each="{value,key in opts.menu.slice(1)}" data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" dfd="{parent.dfdList[key+1]}" scroll-mediator="{parent.scrollMediator}" app-id="{value.name}"></div>
+			<div each="{value,key in opts.menu.slice(1)}" data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" dfd="{parent.dfdList[key+1]}" scroll-mediator="{parent.scrollMediator}" bg-width="{bgWidth}" app-id="{value.name}"></div>
 		</div><!--
 		--><side-menu menu="{opts.menu}" imgs="{opts.imgs}" scroll-mediator="{this.scrollMediator}"></side-menu>
 	</div>
@@ -46,7 +46,6 @@
 	}
 	:scope > div.container > div.contents > div {
 		width: 750px;
-		padding: 0 calc(50vw - 265px) 0 calc(50vw - 507px);
 		font-family: "Rounded Mplus 1c";
 		font-size: 1.7rem;
 	}
@@ -105,6 +104,13 @@
 			module.dfdList = opts.menu.map(function(item){
 				return new $.Deferred();
 			});
+		});
+		
+		module.on("before-mount", function(){
+			module.bgWidth = {
+				size: opts.scrollBarSize,
+				str: "0 calc(50vw - 250px - " + opts.scrollBarSize.width/2 + "px) 0 calc(50vw - 500px - " + opts.scrollBarSize.width/2 + "px)",
+			};
 		});
 		
 		module.on("mount", function(){

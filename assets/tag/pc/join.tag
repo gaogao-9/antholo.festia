@@ -1,4 +1,4 @@
-<join style="background-image: url({opts.imgs.bg_flower});">
+<join style="padding: {opts.bgWidth.str}; background-image: url({opts.imgs.bg_flower});">
 	<div id="{opts.appId}">
 		<div class="oubo">
 			<img class="title left" src="{opts.imgs.title_oubo}">

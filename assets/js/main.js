@@ -22,7 +22,7 @@ jQuery(function($){
 		return $.when(loadBinary(imgs), loadText(styles)).then(function(imgsBlob, styleList){
 			var imgPathList = imgs
 				.reduce(function(obj, path, i){
-					var filename = path.replace(/.*?([^\/]+)\.png$/, "$1");
+					var filename = path.replace(/.*?([^\/]+)\.(?:jpg|png)$/, "$1");
 					obj[filename] = URL.createObjectURL(imgsBlob[i]);
 					
 					return obj;
@@ -80,7 +80,7 @@ jQuery(function($){
 			});
 			
 			return imgs.reduce(function(obj, path, i){
-				var filename = path.replace(/.*?([^\/]+)\/([^\/]+)\.png$/, "$1_$2");
+				var filename = path.replace(/.*?([^\/]+)\/([^\/]+)\.(?:jpg|png)$/, "$1_$2");
 				obj[filename] = urls[i];
 				
 				return obj;
@@ -93,19 +93,42 @@ jQuery(function($){
 		});
 		
 		// スクロールバー幅の取得
-		var scrollBarWidth = function(){
-			var $iframe = document.createElement("iframe");
+		var scrollBarSize = function scrollBarSize() {
+			var W = 1000, H = 1000;
 			
-			console.log($iframe.contentWindow);
+			var iframe = document.createElement("iframe");
+			    iframe.frameBorder = 0;
+			    iframe.width = W;
+			    iframe.height = H;
 			
-			//return parseInt(window.getComputedStyle(tester, null).getPropertyValue('width'));
+			with (iframe.style) {
+				position = "absolute";
+				top = "0px";
+				left = "-" + (W * 2) + "px";
+			}
+			
+			document.body.appendChild(iframe);
+			var win = iframe.contentWindow,
+			    doc = win.document;
+			doc.open();
+			doc.write('<!DOCTYPE html><html><head><style type="text/css">html,body,div{margin:0;padding:0;}div{width:'+(W*2)+'px;height:'+(H*2)+'px;}</style></head><body><div></div></body></html>');
+			doc.close();
+			
+			var res = {
+				width: W - doc.documentElement.clientHeight,
+				height: H - doc.documentElement.clientWidth
+			};
+			
+			document.body.removeChild(iframe);
+			
+			return res;
 		}();
 		
 		// マウント処理
 		return $.when(imgDfd).then(function(imgs){
 			var mountDfd = new $.Deferred();
 			endDfd = new $.Deferred();
-			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, endDfd: endDfd, menu: resources.menu, scrollSettings: scrollSettings, });
+			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, endDfd: endDfd, menu: resources.menu, scrollSettings: scrollSettings, scrollBarSize: scrollBarSize });
 			
 			return $.when(mountDfd.promise(), sleepDfd.promise());
 		});
