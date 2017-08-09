@@ -1,7 +1,7 @@
-<flyer style="padding: {opts.bgWidth.str}; background-image: url({opts.imgs.bg_star});">
+<flyer style="padding: {opts.bgWidth.str}; background-image: url({opts.imgs.bg_flower});">
 	<div id="{opts.appId}">
 		<img class="title" src="{opts.imgs.title_flyer}">
-		<div class="paper center colorize">
+		<div class="paper center">
 			<img src="{opts.imgs.res_flyer}">
 		</div>
 		<div class="info center colorize">

@@ -73,7 +73,19 @@
 		"tag": [
 			"/assets/tag/mobile/app.tag"
 		],
-		"img": [],
+		"img": [
+			"/assets/img/bg/top.png",
+			"/assets/img/subhead00/red.png",
+			"/assets/img/title/site.png",
+			"/assets/img/title/oubo.png",
+			"/assets/img/title/sankayotei.png",
+			"/assets/img/title/member.png",
+			"/assets/img/title/flyer.png",
+			"/assets/img/title/market.png",
+			"/assets/img/title/links.png",
+			"/assets/img/title/contact.png",
+			"/assets/img/res/flyer.png"
+		],
 		"style": []
 	},
 	"menu": [

@@ -5,7 +5,7 @@
 			参加者一覧です
 		</div>
 		<div class="container">
-			<div each="{memberList}">
+			<div each="{opts.memberList}">
 				<a target="_blank" href="https://twitter.com/{id}">
 					<img src="{img}"><br>
 					<span class="colorize">{name}</span> <span class="colorize">(@{id})</span>
@@ -83,11 +83,6 @@
 		var scrollMediator = opts.scrollMediator;
 		
 		module.on("before-mount", function(){
-			module.memberList = [
-				{ id: "sanetaso", name: "伊丹", img: "https://pbs.twimg.com/profile_images/886922275068366848/0cRGWrdp_400x400.jpg"},
-				{ id: "non_affleck", name: "のんアフ", img: "https://pbs.twimg.com/profile_images/860445188577050625/KYJnWgnU_400x400.jpg"},
-				{ id: "gaogao_9", name: "がお", img: "https://pbs.twimg.com/profile_images/823149296384020482/rALItQkG_400x400.jpg"},
-			];
 		});
 		
 		module.on("mount", function(){

@@ -8,14 +8,7 @@
 			<div class="info">
 				<h2>お知らせ</h2>
 				<div>
-					<article>[17/03/11] ダミーデータ1</article>
-					<article>[17/03/10] ダミーデータ2</article>
-					<article>[17/03/10] ダミーデータ3</article>
-					<article>[17/03/10] ダミーデータ4</article>
-					<article>[17/03/10] ダミーデータ5</article>
-					<article>[17/03/10] ダミーデータ6</article>
-					<article>[17/03/10] ダミーデータ7</article>
-					<article>[17/03/10] ダミーデータ8</article>
+					<article>[17/08/11] 一般公開開始</article>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-<links style="padding: {opts.bgWidth.str}; background-image: url({opts.imgs.bg_star});">
+<links style="padding: {opts.bgWidth.str}; background-image: url({opts.imgs.bg_flower});">
 	<div id="{opts.appId}">
 		<img class="title" src="{opts.imgs.title_links}">
 		<div class="info center colorize">

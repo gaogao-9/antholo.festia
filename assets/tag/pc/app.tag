@@ -1,5 +1,4 @@
 <app>
-	
 	<virtual each="{value,key in opts.menu.slice(0,1)}">
 		<div data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" dfd="{parent.dfdList[key]}" scroll-mediator="{parent.scrollMediator}" id="{value.name}"></div>
 	</virtual>

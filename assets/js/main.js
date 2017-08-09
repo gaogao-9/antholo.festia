@@ -1,15 +1,17 @@
 jQuery(function($){
-	var resources, scrollSettings, endDfd;
+	var resources, scrollSettings, memberList, endDfd;
 	var UA = createUA();
 	
 	$.when(
 		$.getJSON("/assets/json/resources.json"),
-		$.getJSON("/assets/json/scrollSettings.json")
+		$.getJSON("/assets/json/scrollSettings.json"),
+		$.getJSON("/assets/json/memberList.json")
 	).catch(function(obj, message, error){
 		throw error;
-	}).then(function(_resources, _scrollSettings){
+	}).then(function(_resources, _scrollSettings, _memberList){
 		resources      = _resources[0];
 		scrollSettings = _scrollSettings[0];
+		memberList = _memberList[0];
 		return resources.loading;
 	})
 	// 以下loading画像読み込み処理
@@ -128,7 +130,7 @@ jQuery(function($){
 		return $.when(imgDfd).then(function(imgs){
 			var mountDfd = new $.Deferred();
 			endDfd = new $.Deferred();
-			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, endDfd: endDfd, menu: resources.menu, scrollSettings: scrollSettings, scrollBarSize: scrollBarSize });
+			riot.mount("app", { imgs: imgs, mountDfd: mountDfd, endDfd: endDfd, menu: resources.menu, scrollSettings: scrollSettings, memberList: memberList, scrollBarSize: scrollBarSize });
 			
 			return $.when(mountDfd.promise(), sleepDfd.promise());
 		});
