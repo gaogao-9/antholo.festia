@@ -1,10 +1,10 @@
 <app>
 	<virtual each="{value,key in opts.menu.slice(0,1)}">
-		<div data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" dfd="{parent.dfdList[key]}" scroll-mediator="{parent.scrollMediator}" id="{value.name}"></div>
+		<div data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" member-list="{parent.opts.memberList}" dfd="{parent.dfdList[key]}" scroll-mediator="{parent.scrollMediator}" id="{value.name}"></div>
 	</virtual>
 	<div class="container {visible: this.visible}">
 		<div class="contents">
-			<div each="{value,key in opts.menu.slice(1)}" data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" dfd="{parent.dfdList[key+1]}" scroll-mediator="{parent.scrollMediator}" bg-width="{bgWidth}" app-id="{value.name}"></div>
+			<div each="{value,key in opts.menu.slice(1)}" data-is="{value.name}" menu="{parent.opts.menu}" imgs="{parent.opts.imgs}" member-list="{parent.opts.memberList}" dfd="{parent.dfdList[key+1]}" scroll-mediator="{parent.scrollMediator}" bg-width="{bgWidth}" app-id="{value.name}"></div>
 		</div><!--
 		--><side-menu menu="{opts.menu}" imgs="{opts.imgs}" scroll-mediator="{this.scrollMediator}"></side-menu>
 	</div>

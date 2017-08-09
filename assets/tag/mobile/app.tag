@@ -6,8 +6,8 @@
 			<h1><img src="{opts.imgs.title_site}"></h1>
 			
 			<p>
-				当サイトは、2017年冬のコミックマーケット93で
-				頒布予定の「政マニオールキャラアンソロジー」の
+				当サイトは、2017年冬のコミックマーケット93で<br>
+				頒布予定の「政マニオールキャラアンソロジー」の<br>
 				企画の告知ページです。
 			</p>
 			
@@ -119,11 +119,13 @@
 		:scope {
 			display: block;
 			text-align: center;
-				background-size: contain;
-				background-attachment: fixed;
-				background-color: #fefff9;
-				background-position: right top;
-				background-repeat: no-repeat;
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			background-size: contain;
+			background-attachment: fixed;
+			background-color: #fefff9;
+			background-position: right bottom;
+			background-repeat: no-repeat;
 		}
 		:scope>div {
 			background-color: rgba(255, 255, 255, 0.7);
@@ -133,7 +135,8 @@
 			font-size: 3rem;
 		}
 		:scope>div>div {
-			margin: 5rem;
+			margin: 5rem 0;
+			width: 100%;
 			font-size: 1.5rem;
 		}
 		:scope>div>div:last-of-type {
@@ -141,7 +144,10 @@
 			margin: 0rem;
 		}
 		:scope>div>div>* {
-			margin: 1rem;
+			margin: 3rem 0;
+		}
+		:scope>div>div>table td:first-of-type {
+			min-width: 8rem;
 		}
 		:scope>div>div>ul {
 			display: table;
@@ -169,6 +175,7 @@
 			color: white;
 			display: inline-block;
 			width: 500px;
+			max-width: 100%;
 			height: 108px;
 			box-sizing: border-box;
 			padding: calc(54px - 1.25rem) 0;
@@ -179,6 +186,7 @@
 		}
 		:scope>div>div>*.container {
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 			font-size: 1.4rem;
 			line-height: 1;
@@ -191,7 +199,11 @@
 			border: solid 2px #bdbdbd;
 			border-radius: 50%;
 			width: 170px;
+			max-width: 100%;
 			height: 170px;
+		}
+		:scope>div>div>*.paper img {
+			width: 100%;
 		}
 	</style>
 	<script>

@@ -59,6 +59,7 @@
 		}
 		:scope>div>*.container {
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 			font-size: 1.4rem;
 			line-height: 1;
