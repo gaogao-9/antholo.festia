@@ -101,9 +101,13 @@
 		<div>
 			<h1><img src="{opts.imgs.title_links}"></h1>
 			
-			<p>
-				準備中
-			</p>
+			<div class="links">
+				<ul>
+					<li>・<a target="_blank" href="http://www.ryokuyou.co.jp/doujin/manual/basic.html">原稿作成の基本 | 同人誌印刷の緑陽社</a></li>
+					<li>・<a target="_blank" href="http://www.ryokuyou.co.jp/doujin/column/atumono.html">分厚い本をキレイに作るコツ  | 同人誌印刷の緑陽社</a></li>
+					<li>・<a target="_blank" href="http://www.shimaya.net/hajimete-no-doujinshi/index.html">同人誌初心者のための しまねぇ＆まやちゃん はじめての同人誌</a></li>
+				</ul>
+			</div>
 		</div>
 		
 		<div>
@@ -138,6 +142,7 @@
 			margin: 5rem 0;
 			width: 100%;
 			font-size: 1.5rem;
+			line-height: 1.75;
 		}
 		:scope>div>div:last-of-type {
 			padding-bottom: 5rem;
@@ -204,6 +209,11 @@
 		}
 		:scope>div>div>*.paper img {
 			width: 100%;
+		}
+		:scope>div>div>*.links>ul {
+			display: inline-block;
+			text-align: left;
+			line-height: 1.7;
 		}
 	</style>
 	<script>

@@ -1,8 +1,12 @@
 <links style="padding: {opts.bgWidth.str}; background-image: url({opts.imgs.bg_flower});">
 	<div id="{opts.appId}">
 		<img class="title" src="{opts.imgs.title_links}">
-		<div class="info center colorize">
-			準備中！
+		<div class="info center">
+			<ul>
+				<li class="colorize">・<a target="_blank" href="http://www.ryokuyou.co.jp/doujin/manual/basic.html">原稿作成の基本 | 同人誌印刷の緑陽社</a></li>
+				<li class="colorize">・<a target="_blank" href="http://www.ryokuyou.co.jp/doujin/column/atumono.html">分厚い本をキレイに作るコツ  | 同人誌印刷の緑陽社</a></li>
+				<li class="colorize">・<a target="_blank" href="http://www.shimaya.net/hajimete-no-doujinshi/index.html">同人誌初心者のための しまねぇ＆まやちゃん はじめての同人誌</a></li>
+			</ul>
 		</div>
 	</div>
 	
@@ -20,7 +24,7 @@
 			margin: 1rem auto;
 		}
 		:scope>div .colorize a {
-			border-bottom: 2px solid #138a34;
+			border-bottom: 2px solid #8a1313;
 			text-decoration: none;
 		}
 		:scope>div .colorize span:nth-child(3n+1) {
@@ -33,8 +37,8 @@
 			color: #fda8a8;
 		}
 		:scope>div>* {
-			line-height: 1.8;
 			padding: 1rem 0;
+			line-height: 1.8;
 		}
 		:scope>div .right {
 			text-align: right;
@@ -43,9 +47,10 @@
 			text-align: center;
 		}
 		:scope>div>*.info {
-			font-size: 2rem;
-			line-height: 1;
-			text-align: center;
+			padding-bottom: 2rem;
+			font-size: 1.5rem;
+			line-height: 2;
+			text-align: left;
 		}
 	</style>
 	
