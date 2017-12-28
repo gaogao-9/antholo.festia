@@ -12,9 +12,9 @@
 			</p>
 			
 			<table class="center">
-				<tr><td class="right">タイトル：</td><td class="left">未定</td></tr>
+				<tr><td class="right">タイトル：</td><td class="left">総理たちの 総理たちによる 総理たちのための 政マニアンソロジー</td></tr>
 				<tr><td class="right">対象：</td><td class="left">全年齢向け</td></tr>
-				<tr><td class="right">発行日：</td><td class="left">2017年12月 コミックマーケット93 政マニ配置該当日</td></tr>
+				<tr><td class="right">発行日：</td><td class="left">2017年12月29日 コミックマーケット93 東5ポ07ab</td></tr>
 				<tr><td class="right">印刷形式：</td><td class="left">A5サイズ／本文モノクロ／オフセット</td></tr>
 				<tr><td class="right">印刷所：</td><td class="left">緑陽社さまを予定</td></tr>
 				<tr><td class="right">通販予定：</td><td class="left">有</td></tr>
@@ -66,10 +66,10 @@
 			<h1><img src="{opts.imgs.title_member}"></h1>
 			
 			<div class="container">
-				<div each="{opts.memberList}">
+				<div class="memberCard" each="{opts.memberList}">
 					<a target="_blank" href="https://twitter.com/{id}">
-						<img src="{img}"><br>
-						<span>{name}</span> <span>(@{id})</span>
+						<img src="http://furyu.nazo.cc/twicon/{id}/original"><br>
+						<span>{name}</span><br><span>(@{id})</span>
 					</a>
 				</div>
 			</div>
@@ -199,6 +199,9 @@
 		}
 		:scope>div>div>*.container a {
 			text-decoration: none;
+		}
+		:scope>div>div>*.container>.memberCard{
+			width: 300px;
 		}
 		:scope>div>div>*.container img {
 			border: solid 2px #bdbdbd;

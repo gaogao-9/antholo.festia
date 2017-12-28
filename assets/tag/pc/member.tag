@@ -7,13 +7,19 @@
 		<div class="container">
 			<div each="{opts.memberList}">
 				<a target="_blank" href="https://twitter.com/{id}">
-					<img src="{img}"><br>
-					<span class="colorize">{name}</span> <span class="colorize">(@{id})</span>
+					<div>
+						<div>
+							<img src="http://furyu.nazo.cc/twicon/{id}/original">
+						</div>
+						<div>
+							<p><span class="colorize">{text}</span></p>
+						</div>
+					</div>
+					<div>
+						<span class="colorize">{name}</span><br><span class="colorize">(@{id})</span>
+					</div>
 				</a>
 			</div>
-		</div>
-		<div class="center colorize">
-			他のメンバーは近日公開予定！
 		</div>
 	</div>
 	
@@ -61,21 +67,47 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 			line-height: 1;
 			text-align: center;
 		}
 		:scope>div>*.container>* {
+			box-sizing: border-box;
+			width: 250px;
 			padding: 0.7rem;
 		}
 		:scope>div>*.container a {
 			text-decoration: none;
 		}
+		:scope>div>*.container a>div:nth-child(1) {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+		}
+		:scope>div>*.container a>div:nth-child(2) {
+			text-align: left;
+			padding-left: 1rem;
+		}
+		:scope>div>*.container a>:nth-child(1)>div:nth-child(1) {
+			width: 100px;
+		}
+		:scope>div>*.container a>:nth-child(1)>div:nth-child(2) {
+			width: 120px;
+		}
+		:scope>div>*.container a>:nth-child(1)>div:nth-child(2)>p {
+			border: solid 1px #aaa;
+			border-radius: 5%;
+			padding: 0.3rem;
+			min-height: 2rem;
+			line-height: 1.35;
+			background-color: rgba(255,255,255, 0.8);
+		}
 		:scope>div>*.container img {
 			border: solid 2px #bdbdbd;
 			border-radius: 50%;
-			width: 170px;
-			height: 170px;
+			width: 100px;
+			height: 100px;
 		}
 	</style>
 	

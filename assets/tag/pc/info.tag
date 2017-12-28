@@ -8,9 +8,9 @@
 		</div>
 		<div class="data">
 			<table>
-				<tr><td class="right colorize">タイトル：</td><td class="colorize">未定</td></tr>
+				<tr><td class="right colorize">タイトル：</td><td class="colorize">総理たちの 総理たちによる 総理たちのための 政マニアンソロジー</td></tr>
 				<tr><td class="right colorize">対象：</td><td class="colorize">全年齢向け</td></tr>
-				<tr><td class="right colorize">発行日：</td><td class="colorize">2017年12月 コミックマーケット93 政マニ配置該当日</td></tr>
+				<tr><td class="right colorize">発行日：</td><td class="colorize">2017年12月29日 コミックマーケット93 東5ポ07ab</td></tr>
 				<tr><td class="right colorize">印刷形式：</td><td class="colorize">A5サイズ／本文モノクロ／オフセット</td></tr>
 				<tr><td class="right colorize">印刷所：</td><td class="colorize">緑陽社さまを予定</td></tr>
 				<tr><td class="right colorize">通販予定：</td><td class="colorize">有</td></tr>

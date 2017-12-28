@@ -4,7 +4,8 @@ var ScrollMediator = (function(){
 		this.events  = {};
 		this.currentScrollTop = -1;
 		this.currentHeight    = -1;
-		this.scrollTimerId    = null;
+		this.scrollTimerId        = null;
+		this.pointerEventsTimerId = null;
 	};
 	
 	ScrollMediator.prototype.on = function on(name, callback){
@@ -135,8 +136,18 @@ var ScrollMediator = (function(){
 		return i;
 	}
 	
+	function onPointerEventsEnded($win){
+		$($win[0].document.body).css("pointer-events", "");
+	}
+	
 	function onScrollTimer($win){
 		this.scrollTimerId = null;
+		
+		if(this.pointerEventsTimerId) clearTimeout(this.pointerEventsTimerId);
+		
+		$($win[0].document.body).css("pointer-events", "none");
+		this.pointerEventsTimerId = setTimeout(onPointerEventsEnded, 110, $win);
+		
 		this.updatePosition($win.scrollTop());
 	}
 	return ScrollMediator;

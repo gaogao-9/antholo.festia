@@ -2,16 +2,136 @@
 	{
 		"id": "sanetaso",
 		"name": "伊丹",
-		"img": "//api.surume.tk/icon/twitter/sanetaso"
+		"text": "頑張ります"
 	},
 	{
 		"id": "non_affleck",
 		"name": "のんアフ",
-		"img": "//api.surume.tk/icon/twitter/non_affleck"
+		"text": "政霊の生活が第一！"
 	},
 	{
 		"id": "gaogao_9",
 		"name": "がお",
-		"img": "//api.surume.tk/icon/twitter/gaogao_9"
+		"text": "最高を届けられるよう頑張りたい"
+	},
+	{
+		"id": "nyan_nyee",
+		"name": "にゃんにー",
+		"text": "行くわよ、タチンコンメ！"
+	},
+	{
+		"id": "grave1230",
+		"name": "コんスープ",
+		"text": "よろしくお願いします！"
+	},
+	{
+		"id": "kuzumotu",
+		"name": "くずもつ",
+		"text": "総理がんばっちゃうぞー"
+	},
+	{
+		"id": "sujikosomething",
+		"name": "すじこ",
+		"text": "手が滑らないよう気を付けます…！"
+	},
+	{
+		"id": "menrui_seiken",
+		"name": "らーめん丸",
+		"text": "初のアンソロ参加頑張ります！！"
+	},
+	{
+		"id": "denstagames",
+		"name": "デンスタ",
+		"text": "比較的新米総理とっても頑張ります"
+	},
+	{
+		"id": "harererer",
+		"name": "はれ",
+		"text": "頑張って良いの描くぞー！"
+	},
+	{
+		"id": "gtgt_yamada",
+		"name": "ひじき",
+		"text": "アリシアさんをなるたけかわいく！"
+	},
+	{
+		"id": "stray_lily",
+		"name": "彩緒ゆうり",
+		"text": "参加できて嬉しいです！"
+	},
+	{
+		"id": "yumemi_nousagi",
+		"name": "ゆめみの",
+		"text": "ここぞとばかりに推しを推します！"
+	},
+	{
+		"id": "aoiyukito2121",
+		"name": "葵ユキト",
+		"text": "よろしくです！政マニサイコー！！"
+	},
+	{
+		"id": "hash_7tel",
+		"name": "斜",
+		"text": "政マニ愛、貢献できれば幸いです！"
+	},
+	{
+		"id": "Kageyama_3",
+		"name": "景山",
+		"text": "がんばるゾーイ！！！"
+	},
+	{
+		"id": "peno_sukebe",
+		"name": "ぺの助",
+		"text": "お疲れ様です宜しくお願いします!"
+	},
+	{
+		"id": "ColdSkyLab",
+		"name": "ColdSky（しーえす）",
+		"text": "リンちゃん強いかわいい！"
+	},
+	{
+		"id": "mimeino",
+		"name": "あけ",
+		"text": "推しのいる暮らし"
+	},
+	{
+		"id": "makomove_seiken",
+		"name": "makoやん",
+		"text": "フラットチェスト！！！！"
+	},
+	{
+		"id": "napier_271828",
+		"name": "果糖",
+		"text": "何卒よろしくお願いします……！"
+	},
+	{
+		"id": "dashi_9",
+		"name": "きつね",
+		"text": "よろしくお願いします。"
+	},
+	{
+		"id": "tsukimino_udon",
+		"name": "月見の",
+		"text": "宜しくお願いします"
+	},
+	{
+		"id": "RV00RV",
+		"name": "番場ヴァン.",
+		"text": "溢れるモチベで挑みます！"
+	},
+	{
+		"id": "m45516082",
+		"name": "m",
+		"text": "頑張ろうという気持ちはありました"
+	},
+	{
+		"id": "roua12tnt",
+		"name": "楼亞",
+		"text": "かわいいコッカ目指して頑張ります"
+	},
+	{
+		"id": "ma_hassaku",
+		"name": "麻宮はっさく",
+		"text": "素敵な企画に参加できて光栄です。"
 	}
 ]

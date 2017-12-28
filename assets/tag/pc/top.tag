@@ -8,6 +8,7 @@
 			<div class="info">
 				<h2>お知らせ</h2>
 				<div>
+					<article>[17/12/28] メンバー更新</article>
 					<article>[17/08/19] リンク追加</article>
 					<article>[17/08/11] 一般公開開始</article>
 				</div>
