@@ -68,7 +68,7 @@
 			<div class="container">
 				<div class="memberCard" each="{opts.memberList}">
 					<a target="_blank" href="https://twitter.com/{id}">
-						<img src="http://furyu.nazo.cc/twicon/{id}/original"><br>
+						<img src="https://api.surume.tk/icon/twitter/{id}"><br>
 						<span>{name}</span><br><span>(@{id})</span>
 					</a>
 				</div>

@@ -9,7 +9,7 @@
 				<a target="_blank" href="https://twitter.com/{id}">
 					<div>
 						<div>
-							<img src="http://furyu.nazo.cc/twicon/{id}/original">
+							<img src="https://api.surume.tk/icon/twitter/{id}">
 						</div>
 						<div>
 							<p><span class="colorize">{text}</span></p>
@@ -87,15 +87,16 @@
 		}
 		:scope>div>*.container a>div:nth-child(2) {
 			text-align: left;
+			padding-top: 0.2rem;
 			padding-left: 1rem;
 		}
-		:scope>div>*.container a>:nth-child(1)>div:nth-child(1) {
+		:scope>div>*.container a>div:nth-child(1)>div:nth-child(1) {
 			width: 100px;
 		}
-		:scope>div>*.container a>:nth-child(1)>div:nth-child(2) {
+		:scope>div>*.container a>div:nth-child(1)>div:nth-child(2) {
 			width: 120px;
 		}
-		:scope>div>*.container a>:nth-child(1)>div:nth-child(2)>p {
+		:scope>div>*.container a>div:nth-child(1)>div:nth-child(2)>p {
 			border: solid 1px #aaa;
 			border-radius: 5%;
 			padding: 0.3rem;
