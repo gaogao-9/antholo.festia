@@ -2,7 +2,7 @@
 	<div id="{opts.appId}">
 		<img class="title" src="{opts.imgs.title_market}">
 		<div class="info center colorize">
-			準備中！
+			<a target="_blank" href="https://www.melonbooks.co.jp/detail/detail.php?product_id=323051">メロンブックス 通販ページ</a>
 		</div>
 	</div>
 	
